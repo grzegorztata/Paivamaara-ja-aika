@@ -6,16 +6,16 @@
 	var kuukausi = tanaan.getMonth() + 1; //0 - tammikuu, 11 - joulukuu
 	var vuosi = tanaan.getFullYear();
 
-	var tunti = dzisiaj.getHours();
-		if (godzina<10) godzina = "0" +godzina;
-	var minuutti = dzisiaj.getMinutes();
-		if (minuta<10) minuta = "0" +minuta;
-	var sekunti = dzisiaj.getSeconds();
-		if (sekunda<10) sekunda = "0" +sekunda;
+	var tunti = tanaan.getHours();
+		if (tunti<10) tunti = "0" +tunti;
+	var minuutti = tanaan.getMinutes();
+		if (minuutti<10) minuutti = "0" +minuutti;
+	var sekunti = tanaan.getSeconds();
+		if (sekunti<10) sekunti = "0" +sekunti;
 
 // innerHtml - wstawianie bez konieczności przeładowania strony
-document.getElementById("zegar").innerHTML = dzien+"/"+miesiac+"/"+rok+"  "+godzina+":"+minuta+":"+sekunda;
+document.getElementById("kello").innerHTML = paiva+"/"+kuukausi+"/"+vuosi+"  "+tunti+":"+minuutti+":"+sekunti;
 
 // co sekundę czas będzie się teraz zmieniał
-setTimeout("odliczanie()",1000);
+setTimeout("lahtolaskenta()",1000);
 }
